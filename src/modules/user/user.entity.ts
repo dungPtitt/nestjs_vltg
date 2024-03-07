@@ -1,5 +1,5 @@
 import { Expose } from "class-transformer";
-import { IsDate, IsEmail, IsNotEmpty, IsNumber, IsPhoneNumber, IsString } from "class-validator";
+import { IsDate, IsEmail, IsNotEmpty, IsNumber, IsPhoneNumber, IsString, Length } from "class-validator";
 import { Column, Entity, PrimaryGeneratedColumn, } from "typeorm";
 
 @Entity('User')
@@ -15,8 +15,7 @@ export class User {
 
   @Column()
   @IsNotEmpty()
-  @IsString()
-  @IsPhoneNumber()
+  // @IsPhoneNumber()
   @Expose()
   phone: string;
   
@@ -29,7 +28,6 @@ export class User {
   @Column({
     default: null
   })
-  @IsString()
   @Expose()
   alias: string;
 
@@ -46,40 +44,35 @@ export class User {
 
   @Column()
   @IsNotEmpty()
-  password: number;
+  @Length(8, 26)
+  password: string;
 
-  @Column()
-  @IsNumber()
+  @Column({default: null})
   city: number;
 
   @Column({
     default: null
   })
-  @IsNumber()
   district: number;
 
   @Column({
-    default: true
+    default: null
   })
-  @IsString()
   address: string;
 
   @Column({
-    default: true
+    default: null
   })
-  @IsString()
   opt: string;
 
   @Column({
     default: 0
   })
-  @IsNumber()
   authentic: number;
 
   @Column({
     default: 0
   })
-  @IsNumber()
   isOnline: number;
 
   @Column({
@@ -90,13 +83,11 @@ export class User {
   @Column({
     default: 0
   })
-  @IsNumber()
   gender: number;
 
   @Column({
     default: 0
   })
-  @IsNumber()
   isMarried: number;
 
 }

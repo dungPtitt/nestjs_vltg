@@ -11,12 +11,6 @@ export class Shift {
   @ManyToOne(() => Job, (job) => job.shifts)
   job: Job
 
-  // @Column()
-  // @IsNotEmpty()
-  // @IsNumber()
-  // @Expose()
-  // id_job: number;
-
   @Column({default: null})
   @IsString()
   @IsNotEmpty()

@@ -27,43 +27,39 @@ export class Job {
   vi_tri: string;
 
   @Column({default: null})
-  @IsString()
   @Expose()
   alias: string;
 
   @Column({
     default: 0
   })
-  @IsNumber()
   @Expose()
   hoc_van: number;
 
   @Column({
     default: 0
   })
-  @IsNumber()
   @Expose()
   tra_luong: number;
 
-  @Column({
-    default: 0
-  })
-  @IsNumber()
-  @Expose()
-  dia_diem: number;
+  // @Column({
+  //   default: 0
+  // })
+  // @IsNumber()
+  // @Expose()
+  // dia_diem: number;
 
-  @Column({
-    default: 0
-  })
-  @IsNumber()
-  @Expose()
-  quan_huyen: number;
+  // @Column({
+  //   default: 0
+  // })
+  // @IsNumber()
+  // @Expose()
+  // quan_huyen: number;
 
   //0: theo gio, fulltime
   @Column({
     default: 0
   })
-  @IsNumber()
   @Expose()
   hinh_thuc: number;
 
@@ -84,9 +80,8 @@ export class Job {
   @Column({
     default: 0
   })
-  @IsNumber()
   @Expose()
-  so_luong: Number;
+  so_luong: number;
 
   @Column({
     default: null
@@ -119,7 +114,6 @@ export class Job {
   @Column({
     default: 0
   })
-  @IsNumber()
   @Expose()
   luot_xem: number;
 
@@ -154,7 +148,6 @@ export class Job {
   @Column({
     default: 0
   })
-  @IsNumber()
   @Expose()
   active: number;
 }
