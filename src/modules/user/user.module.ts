@@ -6,6 +6,7 @@ import { DatabaseModule } from "../database/database.module";
 import { EmployerModule } from "../employer/employer.module";
 import { employerProviders } from "../employer/employer.providers";
 import { EmployerService } from "../employer/employer.service";
+import { MailModule } from "../mail/mail.module";
 import { UserController } from "./user.controller";
 import { User } from "./User.entity";
 import { userProviders } from "./user.providers";
@@ -16,6 +17,7 @@ import { UserService } from "./user.service";
     DatabaseModule,
     AuthModule,
     EmployerModule,
+    MailModule
   ],
   controllers: [UserController],
   providers: [
